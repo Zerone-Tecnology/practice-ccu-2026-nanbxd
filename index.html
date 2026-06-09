@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Future 2026 — Хакатон</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="#" class="logo">DF<span>2026</span></a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#about">О событии</a></li>
+                    <li><a href="#tracks">Направления</a></li>
+                    <li><a href="#registration">Регистрация</a></li>
+                </ul>
+            </nav>
+            <a href="#registration" class="btn btn-outline">Принять участие</a>
+            <button class="burger" aria-label="Открыть меню">&#9776;</button>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero" id="hero">
+            <div class="container hero-content">
+                <p class="hero-eyebrow">15–17 августа 2026 · Алматы</p>
+                <h1>Digital Future<br /><span>2026</span></h1>
+                <p class="hero-sub">Три дня. Три направления. Один шанс показать, на что ты способен.</p>
+                <a href="#registration" class="btn btn-primary">Зарегистрироваться</a>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="about" id="about">
+            <div class="container">
+                <h2 class="section-title">О мероприятии</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>Digital Future 2026 — это хакатон для студентов и молодых специалистов, которые хотят
+                            прокачать навыки и познакомиться с командами из разных городов. За 72 часа участники создают
+                            рабочий прототип, защищают его перед жюри и получают обратную связь от практикующих
+                            инженеров.</p>
+                        <p>Мероприятие проходит очно в Алматы. Организаторы обеспечивают рабочее пространство, питание и
+                            призовой фонд для победителей каждого направления.</p>
+                    </div>
+                    <ul class="about-stats">
+                        <li><strong>200+</strong><span>участников</span></li>
+                        <li><strong>72</strong><span>часа</span></li>
+                        <li><strong>3</strong><span>направления</span></li>
+                        <li><strong>15</strong><span>менторов</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRACKS -->
+        <section class="tracks" id="tracks">
+            <div class="container">
+                <h2 class="section-title">Направления</h2>
+                <div class="tracks-grid">
+
+                    <article class="track-card">
+                        <div class="track-icon">&#x1F4BB;</div>
+                        <h3>Web / Mobile</h3>
+                        <p>Разработка веб-сервисов и мобильных приложений. Подходит для тех, кто работает с фронтендом,
+                            бэкендом или full-stack.</p>
+                        <ul class="track-tags">
+                            <li>React</li>
+                            <li>Node.js</li>
+                            <li>Flutter</li>
+                        </ul>
+                    </article>
+
+                    <article class="track-card">
+                        <div class="track-icon">&#x1F5A7;</div>
+                        <h3>Infrastructure / DevOps</h3>
+                        <p>Сетевые решения, автоматизация и облачные технологии. Для тех, кто настраивает, деплоит и
+                            следит за стабильностью систем.</p>
+                        <ul class="track-tags">
+                            <li>Docker</li>
+                            <li>Kubernetes</li>
+                            <li>CI/CD</li>
+                        </ul>
+                    </article>
+
+                    <article class="track-card">
+                        <div class="track-icon">&#x1F9E0;</div>
+                        <h3>AI / ML</h3>
+                        <p>Задачи на базе машинного обучения и анализа данных. От классификации до генеративных моделей
+                            — выбирай уровень сложности сам.</p>
+                        <ul class="track-tags">
+                            <li>Python</li>
+                            <li>PyTorch</li>
+                            <li>LLM</li>
+                        </ul>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- REGISTRATION -->
+        <section class="registration" id="registration">
+            <div class="container">
+                <h2 class="section-title">Регистрация</h2>
+                <p class="section-sub">Заполни форму — мы свяжемся за неделю до старта.</p>
+                <form class="reg-form" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fname">Имя</label>
+                            <input type="text" id="fname" name="fname" placeholder="Айдар" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="lname">Фамилия</label>
+                            <input type="text" id="lname" name="lname" placeholder="Сейткали" required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="aidar@example.com" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="track">Направление</label>
+                        <select id="track" name="track" required>
+                            <option value="" disabled selected>Выбери направление</option>
+                            <option value="web">Web / Mobile</option>
+                            <option value="devops">Infrastructure / DevOps</option>
+                            <option value="ai">AI / ML</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="github">GitHub профиль</label>
+                        <input type="url" id="github" name="github" placeholder="https://github.com/username" />
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Отправить заявку</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-col">
+                <p class="logo">DF<span>2026</span></p>
+                <p class="footer-copy">&copy; 2026 Digital Future. Все права защищены.</p>
+            </div>
+            <div class="footer-col">
+                <p class="footer-heading">Контакты</p>
+                <p><a href="mailto:info@digitalfuture.kz">info@digitalfuture.kz</a></p>
+                <p>Алматы, ул. Байзакова 280</p>
+            </div>
+            <div class="footer-col">
+                <p class="footer-heading">Соцсети</p>
+                <ul class="social-links">
+                    <li><a href="#">Telegram</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', e => {
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // burger menu toggle
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.main-nav');
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('open');
+        });
+    </script>
+
+</body>
+
+</html>

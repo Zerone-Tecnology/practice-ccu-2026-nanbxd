@@ -69,7 +69,7 @@
                 <h2 class="section-title">Направления</h2>
                 <div class="tracks-grid">
 
-                    <article class="track-card">
+                    <a href="track-web.html" class="track-card">
                         <div class="track-icon">&#x1F4BB;</div>
                         <h3>Web / Mobile</h3>
                         <p>Разработка веб-сервисов и мобильных приложений. Подходит для тех, кто работает с фронтендом,
@@ -79,9 +79,10 @@
                             <li>Node.js</li>
                             <li>Flutter</li>
                         </ul>
-                    </article>
+                        <span class="track-card-more">Подробнее →</span>
+                    </a>
 
-                    <article class="track-card">
+                    <a href="track-devops.html" class="track-card">
                         <div class="track-icon">&#x1F5A7;</div>
                         <h3>Infrastructure / DevOps</h3>
                         <p>Сетевые решения, автоматизация и облачные технологии. Для тех, кто настраивает, деплоит и
@@ -91,9 +92,10 @@
                             <li>Kubernetes</li>
                             <li>CI/CD</li>
                         </ul>
-                    </article>
+                        <span class="track-card-more">Подробнее →</span>
+                    </a>
 
-                    <article class="track-card">
+                    <a href="track-ai.html" class="track-card">
                         <div class="track-icon">&#x1F9E0;</div>
                         <h3>AI / ML</h3>
                         <p>Задачи на базе машинного обучения и анализа данных. От классификации до генеративных моделей
@@ -103,7 +105,8 @@
                             <li>PyTorch</li>
                             <li>LLM</li>
                         </ul>
-                    </article>
+                        <span class="track-card-more">Подробнее →</span>
+                    </a>
 
                 </div>
             </div>
@@ -114,7 +117,7 @@
             <div class="container">
                 <h2 class="section-title">Регистрация</h2>
                 <p class="section-sub">Заполни форму — мы свяжемся за неделю до старта.</p>
-                <form class="reg-form" novalidate>
+                <form class="reg-form" id="reg-form" novalidate>
                     <div class="form-row">
                         <div class="form-group">
                             <label for="fname">Имя</label>
@@ -149,7 +152,6 @@
 
     </main>
 
-    <!-- FOOTER -->
     <footer class="site-footer">
         <div class="container footer-inner">
             <div class="footer-col">
@@ -173,7 +175,6 @@
     </footer>
 
     <script>
-        // smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(link => {
             link.addEventListener('click', e => {
                 const target = document.querySelector(link.getAttribute('href'));
@@ -184,11 +185,32 @@
             });
         });
 
-        // burger menu toggle
         const burger = document.querySelector('.burger');
         const nav = document.querySelector('.main-nav');
         burger.addEventListener('click', () => {
             nav.classList.toggle('open');
+        });
+        document.getElementById('reg-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const fname = document.getElementById('fname').value.trim();
+            const lname = document.getElementById('lname').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const track = document.getElementById('track').value;
+
+            if (!fname || !lname || !email || !track) {
+                [document.getElementById('fname'), document.getElementById('lname'),
+                document.getElementById('email'), document.getElementById('track')].forEach(el => {
+                    if (!el.value.trim()) {
+                        el.style.borderColor = '#ef4444';
+                        el.addEventListener('input', () => el.style.borderColor = '', { once: true });
+                    }
+                });
+                return;
+            }
+
+            const params = new URLSearchParams({ email });
+            window.location.href = 'success.html?' + params.toString();
         });
     </script>
 

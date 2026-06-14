@@ -1,0 +1,137 @@
+.success-hero {
+    padding: 100px 0 80px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.success-content {
+    max-width: 520px;
+}
+
+.success-icon {
+    margin-bottom: 28px;
+}
+
+.success-icon svg {
+    animation: pop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.success-hero h1 {
+    font-size: clamp(36px, 6vw, 56px);
+    letter-spacing: -1.5px;
+    margin-bottom: 16px;
+}
+
+.success-lead {
+    font-size: 17px;
+    color: var(--color-muted);
+    margin-bottom: 36px;
+    line-height: 1.65;
+}
+
+.success-lead span {
+    color: var(--color-accent);
+}
+
+/* ==========================================================
+   also-section — другие события
+   ========================================================== */
+
+.also-section {
+    padding: 80px 0;
+}
+
+.also-eyebrow {
+    font-size: 12px;
+    color: var(--color-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
+}
+
+.also-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+    margin-top: 0;
+}
+
+.also-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: border-color 0.2s;
+}
+
+.also-card:hover {
+    border-color: var(--color-accent);
+}
+
+.also-card--accent {
+    border-color: rgba(59, 130, 246, 0.4);
+    background-color: rgba(59, 130, 246, 0.04);
+}
+
+.also-card-tag {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.also-card h3 {
+    font-size: 18px;
+    letter-spacing: -0.3px;
+}
+
+.also-card p {
+    font-size: 14px;
+    color: var(--color-muted);
+    line-height: 1.65;
+    flex: 1;
+}
+
+.also-card-meta {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: var(--color-muted);
+    padding-top: 4px;
+}
+
+.also-card-free {
+    color: #22c55e;
+}
+
+@media (max-width: 900px) {
+    .also-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .success-hero {
+        padding: 64px 0 52px;
+    }
+
+    .also-grid {
+        grid-template-columns: 1fr;
+    }
+}

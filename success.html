@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Заявка принята — Digital Future 2026</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/success.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">DF<span>2026</span></a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html#about">О событии</a></li>
+                    <li><a href="index.html#tracks">Направления</a></li>
+                    <li><a href="index.html#registration">Регистрация</a></li>
+                </ul>
+            </nav>
+            <button class="burger" aria-label="Открыть меню">&#9776;</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="success-hero">
+            <div class="container success-content">
+                <div class="success-icon" aria-hidden="true">
+                    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="32" cy="32" r="31" stroke="#3b82f6" stroke-width="2"/>
+                        <path d="M20 32.5L28.5 41L44 24" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h1>Заявка принята</h1>
+                <p class="success-lead">Ты в списке. За неделю до старта придёт письмо с деталями — проверь <span id="user-email">почту</span>.</p>
+                <a href="index.html" class="btn btn-outline">← На главную</a>
+            </div>
+        </section>
+
+        <section class="also-section">
+            <div class="container">
+                <p class="also-eyebrow">Пока ждёшь</p>
+                <h2 class="section-title">Другие способы прокачаться</h2>
+                <div class="also-grid">
+
+                    <article class="also-card">
+                        <div class="also-card-tag">Воркшоп</div>
+                        <h3>Git & CI/CD Intensive</h3>
+                        <p>Двухдневный практикум по профессиональной работе с Git, GitHub Actions и базовым DevOps-стеком. Ведут инженеры из продуктовых команд.</p>
+                        <div class="also-card-meta">
+                            <span>28–29 июля · Online</span>
+                            <span class="also-card-free">Бесплатно</span>
+                        </div>
+                        <a href="#" class="btn btn-outline">Подробнее</a>
+                    </article>
+
+                    <article class="also-card also-card--accent">
+                        <div class="also-card-tag">Митап</div>
+                        <h3>AI Builders Night #4</h3>
+                        <p>Вечернее мероприятие: три коротких доклада о реальных AI-продуктах, нетворкинг и живые демо. Без слайдов с теорией.</p>
+                        <div class="also-card-meta">
+                            <span>19 июля · Алматы</span>
+                            <span class="also-card-free">Бесплатно</span>
+                        </div>
+                        <a href="#" class="btn btn-primary">Записаться</a>
+                    </article>
+
+                    <article class="also-card">
+                        <div class="also-card-tag">Хакатон</div>
+                        <h3>Open Data Challenge</h3>
+                        <p>48-часовой онлайн-хакатон по открытым государственным данным. Можно участвовать соло или командой до 4 человек.</p>
+                        <div class="also-card-meta">
+                            <span>2–3 августа · Online</span>
+                            <span>Призовой фонд 500 000 ₸</span>
+                        </div>
+                        <a href="#" class="btn btn-outline">Подробнее</a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-col">
+                <p class="logo">DF<span>2026</span></p>
+                <p class="footer-copy">&copy; 2026 Digital Future. Все права защищены.</p>
+            </div>
+            <div class="footer-col">
+                <p class="footer-heading">Контакты</p>
+                <p><a href="mailto:info@digitalfuture.kz">info@digitalfuture.kz</a></p>
+                <p>Алматы, ул. Байзакова 280</p>
+            </div>
+            <div class="footer-col">
+                <p class="footer-heading">Соцсети</p>
+                <ul class="social-links">
+                    <li><a href="#">Telegram</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.main-nav');
+        burger.addEventListener('click', () => nav.classList.toggle('open'));
+
+        // подставить email из URL если передали: success.html?email=...
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('email')) {
+            document.getElementById('user-email').textContent = params.get('email');
+        }
+    </script>
+
+</body>
+</html>

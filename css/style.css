@@ -161,13 +161,28 @@ img {
     margin-left: auto;
 }
 
-/* ==========================================================
-   COMMIT 3: hero section
-   ========================================================== */
-
 .hero {
     padding: 100px 0 80px;
     border-bottom: 1px solid var(--color-border);
+    background-image: url('../img/herobackground.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right,
+            rgba(13, 17, 23, 0.95) 40%,
+            rgba(13, 17, 23, 0.4));
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
 }
 
 .hero-content {
